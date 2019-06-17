@@ -1,0 +1,5 @@
+﻿<div style="display: inline-block">
+    <label>Name: <input type="text" [(ngModel)]="model.name" [disabled]="disabled" /></label>&nbsp;
+    <label>Rent rate: <input type="number" [(ngModel)]="model.rate" [disabled]="disabled" /></label>
+    <button (click)="registerSki()" [disabled]="!isModelValid || disabled" >Add ski</button>
+</div>

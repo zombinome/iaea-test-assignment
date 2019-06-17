@@ -1,0 +1,26 @@
+﻿<div class="ski-list">
+    <p *ngIf="!hasSkis">There is no skis registered</p>
+    <table *ngIf="hasSkis" style="width: 80%; max-width: 1024px;">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Rate</th>
+                <th>Rented</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let ski of skis">
+                <td>{{ski.id}}</td>
+                <td>{{ski.name}}</td>
+                <td>{{ski.rate}}</td>
+                <td>{{ski.rentTime|date:short}} - {{ski.customerName}}</td>
+                <td>
+                    <button *ngIf="!ski.rentTime" (click)="rent(ski)">Rent</button>
+                    <button *ngIf="!!ski.rentTime" (click)="return(ski)">Return</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>

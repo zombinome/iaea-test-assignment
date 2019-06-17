@@ -1,0 +1,14 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+<h1>Ski rental tracking</h1>
+<div *ngIf="loading">
+    Loading...
+</div>
+
+<div *ngIf="!loading">
+    <h3>List of skis</h3>
+    <br />
+    <register-ski></register-ski>
+    <br />
+    <ski-list [skis]="skis"></ski-list>
+</div>
